@@ -245,6 +245,8 @@ function initMobileMenu() {
       btn.classList.add("open");
       btn.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
+      // Focus trap: move focus to close button
+      setTimeout(() => { if (close) close.focus(); }, 50);
     }
   });
 
@@ -254,6 +256,24 @@ function initMobileMenu() {
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && !menu.hidden) closeMobileMenu();
   });
+
+  // Close when tapping outside menu content (the overlay backdrop)
+  menu.addEventListener("click", e => {
+    if (e.target === menu) closeMobileMenu();
+  });
+
+  // Add stagger animation to mobile links when menu opens
+  const menuLinks = menu.querySelectorAll(".mobile-link");
+  const originalHidden = menu.hidden;
+  const observer = new MutationObserver(() => {
+    if (!menu.hidden && typeof gsap !== "undefined") {
+      gsap.fromTo(menuLinks,
+        { opacity: 0, x: -20 },
+        { opacity: 1, x: 0, stagger: 0.07, duration: 0.4, ease: "power3.out", delay: 0.15 }
+      );
+    }
+  });
+  observer.observe(menu, { attributes: true, attributeFilter: ["hidden"] });
 }
 
 /* ── Hero Parallax ──────────────────────────────────────────── */
