@@ -167,14 +167,18 @@
         <div class="historia-media" data-reveal="clip-reveal">
           <div class="historia-frame">
             <!-- REEMPLAZAR con foto de Jakson Anselmi y Diego Hernández -->
-            <div class="historia-placeholder" role="img" aria-label="Foto de los fundadores — pendiente de actualizar">
+            <div class="historia-placeholder" role="img" aria-label="Foto de los fundadores Jakson y Diego — pendiente">
               <svg viewBox="0 0 280 380" fill="none" aria-hidden="true">
                 <rect width="280" height="380" fill="#EAF2F8"/>
-                <circle cx="140" cy="130" r="52" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6"/>
-                <path d="M70,300 Q140,245 210,300" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6"/>
-                <path d="M140,20 L143,30 L154,30 L145,37 L148,47 L140,41 L132,47 L135,37 L126,30 L137,30Z" stroke="#C8A56A" stroke-width="0.8" fill="none" opacity="0.5"/>
+                <!-- Two people silhouettes -->
+                <circle cx="108" cy="130" r="38" fill="#D8E8F2" stroke="#C8A56A" stroke-width="1.2" opacity="0.7"/>
+                <path d="M58,310 Q108,260 158,310" fill="#D8E8F2" stroke="#C8A56A" stroke-width="1.2" opacity="0.7"/>
+                <circle cx="172" cy="130" r="38" fill="#D8E8F2" stroke="#C8A56A" stroke-width="1.2" opacity="0.7"/>
+                <path d="M122,310 Q172,260 222,310" fill="#D8E8F2" stroke="#C8A56A" stroke-width="1.2" opacity="0.7"/>
+                <!-- Stars -->
+                <path d="M140,25 L142,32 L149,32 L144,36 L146,43 L140,39 L134,43 L136,36 L131,32 L138,32Z" stroke="#C8A56A" stroke-width="0.9" fill="rgba(200,165,106,0.12)"/>
               </svg>
-              <p>Foto de los fundadores<br/><small>— pendiente de actualizar —</small></p>
+              <p>Jakson Anselmi &amp; Diego Hernández<br/><small>Foto de los fundadores próximamente</small></p>
             </div>
           </div>
         </div>
@@ -245,11 +249,16 @@
     <!-- Zona 2 -->
     <div class="zona-row rl" data-zona="2">
       <div class="zona-media" data-reveal="blur-up">
-        <div class="zona-frame zona-no-img" role="img" aria-label="Zona de masajes y terapias corporales">
-          <div class="zona-gradient masajes-bg"></div>
-          <div class="zona-ph-text">
-            <svg viewBox="0 0 60 60" fill="none" width="48" aria-hidden="true"><ellipse cx="30" cy="30" rx="22" ry="15" stroke="#C8A56A" stroke-width="1" opacity="0.6"/><path d="M30,15 Q30,5 25,4" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6"/><path d="M22,22 Q10,18 8,26 Q6,34 18,34" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6"/></svg>
-            <span>Foto próximamente</span>
+        <div class="zona-frame zona-ph-frame masajes-ph" role="img" aria-label="Zona de masajes y terapias corporales">
+          <div class="zona-ph-overlay">
+            <svg viewBox="0 0 80 80" fill="none" width="64" aria-hidden="true">
+              <path d="M16,45 Q26,28 40,42 Q54,56 64,38" stroke="rgba(200,165,106,0.8)" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M12,56 Q24,39 40,53 Q56,67 68,50" stroke="rgba(200,165,106,0.45)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="40" cy="28" r="10" stroke="rgba(200,165,106,0.4)" stroke-width="1.5"/>
+              <path d="M34,28 Q37,24 40,27 Q43,24 46,28" stroke="rgba(200,165,106,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="zona-ph-label">Masajes &amp; Terapias</span>
+            <span class="zona-ph-sub">Imagen real próximamente</span>
           </div>
         </div>
       </div>
@@ -265,11 +274,20 @@
     <!-- Zona 3 -->
     <div class="zona-row rr" data-zona="3">
       <div class="zona-media" data-reveal="rotate-in">
-        <div class="zona-frame zona-no-img" role="img" aria-label="Zona de estética facial y pestañas">
-          <div class="zona-gradient facial-bg"></div>
-          <div class="zona-ph-text">
-            <svg viewBox="0 0 60 60" fill="none" width="48" aria-hidden="true"><circle cx="30" cy="28" r="18" stroke="#C8A56A" stroke-width="1" opacity="0.6"/><path d="M22,28 Q26,22 30,24 Q34,22 38,28" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/><path d="M25,36 Q30,41 35,36" stroke="#C8A56A" stroke-width="1" fill="none" opacity="0.6" stroke-linecap="round"/></svg>
-            <span>Foto próximamente</span>
+        <div class="zona-frame zona-ph-frame facial-ph" role="img" aria-label="Zona de estética facial y pestañas">
+          <div class="zona-ph-overlay">
+            <svg viewBox="0 0 80 80" fill="none" width="60" aria-hidden="true">
+              <circle cx="40" cy="35" r="20" stroke="rgba(180,140,100,0.6)" stroke-width="2"/>
+              <path d="M31,35 Q34,30 37,33 Q40,30 43,35" stroke="rgba(180,140,100,0.9)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M33,44 Q40,50 47,44" stroke="rgba(180,140,100,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M40,15 L40,10" stroke="rgba(180,140,100,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M28,12 L31,17" stroke="rgba(180,140,100,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M52,12 L49,17" stroke="rgba(180,140,100,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M38,61 Q30,68 24,62" stroke="rgba(180,140,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M42,61 Q50,68 56,62" stroke="rgba(180,140,100,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="zona-ph-label">Facial &amp; Pestañas</span>
+            <span class="zona-ph-sub">Imagen real próximamente</span>
           </div>
         </div>
       </div>
@@ -333,6 +351,150 @@
       <p class="body-text text-center" data-reveal="fade-up">Todos los precios en pesos colombianos (COP).</p>
       <div class="svc-filters" id="svc-filters" role="tablist" aria-label="Filtrar por categoría" data-reveal="fade-up"></div>
       <div class="svc-grid" id="svc-grid" role="region" aria-live="polite" aria-label="Servicios"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ RESERVA ══════════════════════ -->
+  <section id="reserva" class="section sec-reserva" aria-labelledby="h-reserva">
+    <div class="container narrow">
+      <span class="label text-center" data-reveal="fade-up">AGENDA TU VISITA</span>
+      <h2 id="h-reserva" class="heading text-center" data-reveal="fade-up">
+        Reserva tu<br/><em>experiencia celestial</em>
+      </h2>
+      <p class="body-text text-center" data-reveal="fade-up">Elige servicio, fecha y hora — te abrimos WhatsApp con todo listo.</p>
+
+      <form id="reserva-form" class="rform-v2" novalidate>
+
+        <!-- BLOQUE 1: SERVICIO -->
+        <div class="rblock" data-reveal="fade-up">
+          <div class="rblock-header">
+            <span class="rblock-num">1</span>
+            <span class="rblock-title">¿Qué experiencia deseas?</span>
+          </div>
+          <div class="rcat-grid" id="rcat-grid">
+            <button type="button" class="rcat-btn" data-service="Masaje Relajante" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <path d="M8,22 Q13,12 18,20 Q23,28 28,18" stroke="#C8A56A" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M6,28 Q12,18 18,26 Q24,34 30,24" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Masajes</span>
+              <span class="rcat-sub">Relajante · 4 manos</span>
+            </button>
+            <button type="button" class="rcat-btn" data-service="Limpieza Facial Profunda" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <circle cx="18" cy="16" r="9" stroke="#C8A56A" stroke-width="2"/>
+                  <path d="M14,16 Q16,13 18,15 Q20,13 22,16" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M15,22 Q18,25 21,22" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M18,7 L18,4" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Facial</span>
+              <span class="rcat-sub">Limpieza · Lifting · RF</span>
+            </button>
+            <button type="button" class="rcat-btn" data-service="Manicura &amp; Uñas" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <rect x="10" y="9" width="16" height="20" rx="5" stroke="#C8A56A" stroke-width="2"/>
+                  <path d="M14,18 L22,18" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M14,14 L22,14" stroke="#C8A56A" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                  <path d="M14,22 L19,22" stroke="#C8A56A" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Uñas</span>
+              <span class="rcat-sub">Semipermanente · Spa</span>
+            </button>
+            <button type="button" class="rcat-btn" data-service="Sauna &amp; Baño Turco" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <path d="M14,27 Q14,19 15,14 Q16,9 18,7" stroke="#C8A56A" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M18,27 Q18,19 19,14 Q20,9 22,7" stroke="#C8A56A" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M22,27 Q22,21 23,16 Q24,11 26,9" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+                  <path d="M9,29 L27,29" stroke="#C8A56A" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Sauna</span>
+              <span class="rcat-sub">Sauna seco · Turco</span>
+            </button>
+            <button type="button" class="rcat-btn" data-service="Jacuzzi &amp; Zonas Húmedas" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <path d="M5,22 Q10,15 18,22 Q26,29 31,22" stroke="#C8A56A" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M5,28 Q10,21 18,28 Q26,35 31,28" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+                  <path d="M14,10 Q18,5 22,10" stroke="#C8A56A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Jacuzzi</span>
+              <span class="rcat-sub">Zonas Húmedas</span>
+            </button>
+            <button type="button" class="rcat-btn" data-service="Paquete de Spa" aria-pressed="false">
+              <span class="rcat-ico">
+                <svg viewBox="0 0 36 36" fill="none" width="26" aria-hidden="true">
+                  <path d="M18,4 L20,13 L29,13 L22,18 L25,27 L18,22 L11,27 L14,18 L7,13 L16,13Z" stroke="#C8A56A" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="rcat-name">Paquetes</span>
+              <span class="rcat-sub">Experiencias completas</span>
+            </button>
+          </div>
+          <!-- Servicio seleccionado -->
+          <div class="rselected-wrap" id="rselected-wrap" hidden>
+            <div class="rselected">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#25D366" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="rselected-name">—</span>
+              <button type="button" class="rchange-btn" id="rchange-btn">Cambiar</button>
+            </div>
+          </div>
+          <input type="hidden" id="f-servicio" name="servicio" />
+        </div>
+
+        <!-- BLOQUE 2: FECHA Y HORA -->
+        <div class="rblock" data-reveal="fade-up">
+          <div class="rblock-header">
+            <span class="rblock-num">2</span>
+            <span class="rblock-title">¿Cuándo nos visitas?</span>
+          </div>
+          <label for="f-fecha" class="rblock-sublabel">Fecha</label>
+          <input type="date" id="f-fecha" name="fecha" class="rdate-input" required />
+          <p class="rblock-sublabel" style="margin-top:1rem">Hora preferida</p>
+          <div class="rtime-grid" id="rtime-grid" role="group" aria-label="Seleccionar hora">
+            <button type="button" class="rtime-btn" data-time="9:00 am">9am</button>
+            <button type="button" class="rtime-btn" data-time="10:00 am">10am</button>
+            <button type="button" class="rtime-btn" data-time="11:00 am">11am</button>
+            <button type="button" class="rtime-btn" data-time="12:00 pm">12pm</button>
+            <button type="button" class="rtime-btn" data-time="1:00 pm">1pm</button>
+            <button type="button" class="rtime-btn" data-time="2:00 pm">2pm</button>
+            <button type="button" class="rtime-btn" data-time="3:00 pm">3pm</button>
+            <button type="button" class="rtime-btn" data-time="4:00 pm">4pm</button>
+            <button type="button" class="rtime-btn" data-time="5:00 pm">5pm</button>
+            <button type="button" class="rtime-btn" data-time="6:00 pm">6pm</button>
+            <button type="button" class="rtime-btn" data-time="7:00 pm">7pm</button>
+          </div>
+          <input type="hidden" id="f-hora" name="hora" />
+        </div>
+
+        <!-- BLOQUE 3: NOMBRE -->
+        <div class="rblock" data-reveal="fade-up">
+          <div class="rblock-header">
+            <span class="rblock-num">3</span>
+            <span class="rblock-title">¿Quién viene?</span>
+          </div>
+          <label for="f-nombre" class="rblock-sublabel">Tu nombre</label>
+          <input type="text" id="f-nombre" name="nombre" class="rtext-input" placeholder="¿Cómo te llamamos?" required autocomplete="given-name" />
+          <label for="f-notas" class="rblock-sublabel" style="margin-top:0.9rem">Notas <span style="font-weight:400;opacity:.6">(opcional)</span></label>
+          <textarea id="f-notas" name="notas" class="rtext-input rtextarea" rows="2" placeholder="Alergias, ocasión especial, número de personas…"></textarea>
+        </div>
+
+        <div id="form-error" class="form-error" role="alert" hidden>Selecciona un servicio, elige fecha y escribe tu nombre.</div>
+
+        <button type="submit" class="btn-wa-submit" data-reveal="scale-up">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </button>
+        <p class="form-note">O llámanos: <a href="tel:+573209711232">320 971 1232</a> &nbsp;·&nbsp; <a href="tel:+573229265662">322 926 5662</a></p>
+      </form>
     </div>
   </section>
 
@@ -468,55 +630,6 @@
           <a href="#reserva" class="btn btn-outline btn-sm" data-service="Bono Mes de Padres">Consultar precio</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════ RESERVA ══════════════════════ -->
-  <section id="reserva" class="section sec-reserva" aria-labelledby="h-reserva">
-    <div class="container narrow">
-      <span class="label text-center" data-reveal="fade-up">AGENDA TU VISITA</span>
-      <h2 id="h-reserva" class="heading text-center" data-reveal="fade-up">
-        Reserva tu<br/><em>experiencia celestial</em>
-      </h2>
-      <p class="body-text text-center" data-reveal="fade-up">Completa el formulario y abriremos WhatsApp con tu información lista. Sin esperas, sin complicaciones.</p>
-      <form id="reserva-form" class="rform" data-reveal="scale-up" novalidate>
-        <div class="fg">
-          <label for="f-servicio" class="flabel">Servicio o paquete *</label>
-          <div class="fselect-wrap"><select id="f-servicio" name="servicio" class="fc" required><option value="">Selecciona un servicio…</option></select></div>
-        </div>
-        <div class="fg-row">
-          <div class="fg">
-            <label for="f-fecha" class="flabel">Fecha *</label>
-            <input type="date" id="f-fecha" name="fecha" class="fc" required />
-          </div>
-          <div class="fg">
-            <label for="f-hora" class="flabel">Hora preferida *</label>
-            <div class="fselect-wrap">
-              <select id="f-hora" name="hora" class="fc" required>
-                <option value="">Elige un horario…</option>
-                <option>9:00 am</option><option>10:00 am</option><option>11:00 am</option>
-                <option>12:00 pm</option><option>1:00 pm</option><option>2:00 pm</option>
-                <option>3:00 pm</option><option>4:00 pm</option><option>5:00 pm</option>
-                <option>6:00 pm</option><option>7:00 pm</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="fg">
-          <label for="f-nombre" class="flabel">Tu nombre *</label>
-          <input type="text" id="f-nombre" name="nombre" class="fc" placeholder="¿Cómo te llamamos?" required autocomplete="given-name" />
-        </div>
-        <div class="fg">
-          <label for="f-notas" class="flabel">Notas adicionales</label>
-          <textarea id="f-notas" name="notas" class="fc ftextarea" rows="3" placeholder="Alergias, ¿es para una ocasión especial?, preferencias…"></textarea>
-        </div>
-        <div id="form-error" class="form-error" role="alert" hidden>Por favor completa los campos requeridos: servicio, fecha y nombre.</div>
-        <button type="submit" class="btn btn-primary btn-full btn-wa">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Reservar por WhatsApp
-        </button>
-        <p class="form-note">O escríbenos directamente: <a href="https://wa.me/573143395286" target="_blank" rel="noopener noreferrer">+57 314 339 5286</a></p>
-      </form>
     </div>
   </section>
 

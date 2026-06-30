@@ -870,6 +870,128 @@ select.fc { appearance: none; padding-right: 1.5rem; cursor: pointer; }
 .form-note { font-size: 0.8rem; color: var(--texto-suave); text-align: center; }
 .form-note a { color: var(--azul-medio); text-decoration: underline; text-underline-offset: 2px; }
 
+/* ── Reservation Form v2 ────────────────────────────────────── */
+.rform-v2 { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.8rem; }
+.rblock {
+  background: var(--blanco);
+  border: 1px solid rgba(200,165,106,0.2);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(28,61,90,0.06);
+}
+.rblock-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.2rem; }
+.rblock-num {
+  width: 26px; height: 26px;
+  background: var(--azul-marino); color: #fff;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+}
+.rblock-title { font-size: 0.88rem; font-weight: 600; color: var(--azul-marino); }
+.rblock-sublabel {
+  display: block;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--texto-suave); margin-bottom: 0.55rem;
+}
+
+/* Category grid */
+.rcat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.rcat-btn {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0.9rem 0.4rem 0.8rem;
+  border: 1.5px solid rgba(200,165,106,0.2);
+  border-radius: 12px;
+  background: rgba(234,242,248,0.5);
+  cursor: pointer; text-align: center; gap: 0.3rem;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  min-height: 90px;
+}
+.rcat-btn:hover { border-color: var(--dorado); background: rgba(200,165,106,0.06); }
+.rcat-btn.active { border-color: var(--dorado); background: rgba(200,165,106,0.1); box-shadow: 0 0 0 3px rgba(200,165,106,0.15); }
+.rcat-ico {
+  width: 42px; height: 42px;
+  background: rgba(200,165,106,0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.15rem;
+}
+.rcat-name { font-size: 0.76rem; font-weight: 700; color: var(--azul-marino); }
+.rcat-sub { font-size: 0.58rem; color: var(--texto-suave); line-height: 1.3; }
+
+/* Selected service */
+.rselected-wrap { margin-top: 0.9rem; }
+.rselected {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(37,211,102,0.06);
+  border: 1px solid rgba(37,211,102,0.28);
+  border-radius: 8px;
+}
+#rselected-name { flex: 1; font-size: 0.85rem; font-weight: 600; color: var(--texto); }
+.rchange-btn { font-size: 0.7rem; color: var(--azul-medio); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; flex-shrink: 0; }
+
+/* Date & time */
+.rdate-input {
+  width: 100%; padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(200,165,106,0.25); border-radius: 8px;
+  font-size: 0.95rem; font-family: var(--font-body); color: var(--texto);
+  background: var(--blanco); transition: border-color 0.2s;
+}
+.rdate-input:focus { outline: none; border-color: var(--dorado); }
+.rtime-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45rem; }
+.rtime-btn {
+  padding: 0.55rem 0.2rem;
+  border: 1.5px solid rgba(200,165,106,0.2); border-radius: 8px;
+  background: rgba(234,242,248,0.5);
+  font-size: 0.78rem; font-weight: 600; font-family: var(--font-body);
+  color: var(--texto); cursor: pointer; transition: all 0.2s;
+  text-align: center; min-height: 40px;
+}
+.rtime-btn:hover { border-color: var(--dorado); background: rgba(200,165,106,0.08); }
+.rtime-btn.active { background: var(--azul-marino); color: #fff; border-color: var(--azul-marino); }
+
+/* Text inputs */
+.rtext-input {
+  width: 100%; padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(200,165,106,0.25); border-radius: 8px;
+  font-size: 0.95rem; font-family: var(--font-body); color: var(--texto);
+  background: var(--blanco); transition: border-color 0.2s;
+}
+.rtext-input:focus { outline: none; border-color: var(--dorado); }
+.rtextarea { resize: vertical; min-height: 64px; }
+
+/* WhatsApp submit */
+.btn-wa-submit {
+  display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+  width: 100%; padding: 1.1rem;
+  background: #25D366; color: #fff;
+  border: none; border-radius: 14px;
+  font-size: 1rem; font-weight: 700; font-family: var(--font-body);
+  letter-spacing: 0.02em; cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.28);
+  margin-top: 0.4rem;
+}
+.btn-wa-submit:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(37,211,102,0.35); }
+.btn-wa-submit:active { transform: translateY(0); }
+
+/* Zona placeholder frames */
+.zona-ph-frame { position: relative; overflow: hidden; }
+.masajes-ph { background: linear-gradient(145deg, #203d55 0%, #1a3349 50%, #132839 100%); }
+.facial-ph  { background: linear-gradient(145deg, #ede0d0 0%, #e0cdba 50%, #d5bfa6 100%); }
+.zona-ph-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.7rem; padding: 1rem;
+}
+.zona-ph-label { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.04em; }
+.masajes-ph .zona-ph-label { color: rgba(200,165,106,0.9); }
+.facial-ph  .zona-ph-label { color: rgba(120,90,60,0.85); }
+.zona-ph-sub { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+.masajes-ph .zona-ph-sub { color: rgba(200,165,106,0.5); }
+.facial-ph  .zona-ph-sub { color: rgba(120,90,60,0.5); }
+
 /* ── Testimonios ────────────────────────────────────────────── */
 .sec-testimonios { background: var(--azul-marino); }
 .sec-testimonios .heading { color: rgba(255,255,255,0.95); margin: 0.5rem auto 2.5rem; }
@@ -907,10 +1029,10 @@ select.fc { appearance: none; padding-right: 1.5rem; cursor: pointer; }
 .sec-bienvenida {
   overflow: hidden;
 }
-.sec-servicios::after { /* white → navy (→ paquetes) */
+.sec-servicios::after { /* white → cielo-claro (→ reserva) */
   content: ''; position: absolute; bottom: 0; left: 0; right: 0;
   height: 5rem;
-  background: linear-gradient(to bottom, transparent, var(--azul-marino));
+  background: linear-gradient(to bottom, transparent, var(--cielo-claro));
   pointer-events: none;
 }
 .sec-paquetes::after { /* navy → cielo-claro (→ bonos) */
@@ -944,10 +1066,10 @@ select.fc { appearance: none; padding-right: 1.5rem; cursor: pointer; }
   pointer-events: none;
 }
 /* Also blend INTO dark sections from the top */
-.sec-paquetes::before { /* white → transparent at top, so it softly enters from servicios */
+.sec-paquetes::before { /* cielo-claro → transparent at top, entering from reserva */
   content: ''; position: absolute; top: 0; left: 0; right: 0;
   height: 4rem;
-  background: linear-gradient(to bottom, var(--blanco), transparent);
+  background: linear-gradient(to bottom, var(--cielo-claro), transparent);
   pointer-events: none;
 }
 .sec-testimonios::before { /* cielo-claro → transparent at top */
@@ -1404,6 +1526,19 @@ select.fc { appearance: none; padding-right: 1.5rem; cursor: pointer; }
 
   /* Reserva */
   .sec-reserva .heading { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+  .rform-v2 { gap: 0.75rem; margin-top: 1.2rem; }
+  .rblock { padding: 1.2rem 1rem; border-radius: 12px; }
+  .rcat-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .rcat-btn { padding: 0.75rem 0.3rem 0.7rem; min-height: 82px; gap: 0.25rem; }
+  .rcat-ico { width: 36px; height: 36px; }
+  .rcat-name { font-size: 0.72rem; }
+  .rcat-sub { font-size: 0.56rem; }
+  .rtime-grid { grid-template-columns: repeat(4, 1fr); gap: 0.4rem; }
+  .rtime-btn { font-size: 0.74rem; min-height: 38px; padding: 0.45rem 0.1rem; }
+  .rtext-input { font-size: 0.92rem; padding: 0.75rem 0.9rem; }
+  .rdate-input { font-size: 0.92rem; padding: 0.75rem 0.9rem; }
+  .btn-wa-submit { font-size: 0.95rem; padding: 1rem; }
+  .rblock-title { font-size: 0.82rem; }
   .rform { padding: 1.4rem 1.25rem; gap: 1rem; }
   .fg-row { grid-template-columns: 1fr; gap: 1rem; }
   .fc { font-size: 0.95rem; padding: 0.8rem 0; }
@@ -1501,7 +1636,15 @@ select.fc { appearance: none; padding-right: 1.5rem; cursor: pointer; }
   .pkg-prices-sm { flex-direction: column; gap: 0.15rem; }
   .pkg-card { padding: 1rem; }
 
-  /* Reserva */
+  /* Reserva — smallest phones */
+  .rcat-grid { gap: 0.4rem; }
+  .rcat-btn { min-height: 76px; padding: 0.6rem 0.2rem; }
+  .rcat-ico { width: 32px; height: 32px; }
+  .rcat-name { font-size: 0.68rem; }
+  .rcat-sub { display: none; }
+  .rtime-grid { grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+  .rtime-btn { font-size: 0.7rem; min-height: 36px; }
+  .btn-wa-submit { font-size: 0.9rem; padding: 0.95rem; }
   .rform { padding: 1.2rem 1rem; gap: 0.9rem; }
 
   /* Testimonios */

@@ -510,61 +510,74 @@ function initServices() {
   renderServices("todos");
 }
 
-/* ── Populate Reservation Form Select ───────────────────────── */
+/* ── Reservation Form v2 ─────────────────────────────────────── */
 function initReservationForm() {
-  const select = document.getElementById("f-servicio");
-  if (!select) return;
+  // ── Category Buttons ─────────────────────────────────────────
+  const catBtns   = document.querySelectorAll(".rcat-btn");
+  const selWrap   = document.getElementById("rselected-wrap");
+  const selName   = document.getElementById("rselected-name");
+  const changeBtn = document.getElementById("rchange-btn");
+  const svcField  = document.getElementById("f-servicio");
 
-  // Set min date to today
-  const fechaInput = document.getElementById("f-fecha");
-  if (fechaInput) {
-    const today = new Date().toISOString().split("T")[0];
-    fechaInput.min = today;
-  }
-
-  // Build optgroups
-  let html = '<option value="">Selecciona un servicio…</option>';
-
-  Object.entries(CATALOG).forEach(([cat, services]) => {
-    html += `<optgroup label="${cat}">`;
-    services.forEach(svc => {
-      html += `<option value="${svc.n}">${svc.n} — ${svc.desde ? "desde " : ""}${formatCOP(svc.p)}</option>`;
+  catBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      catBtns.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-pressed", "false"); });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+      if (svcField)  svcField.value       = btn.dataset.service;
+      if (selName)   selName.textContent  = btn.dataset.service;
+      if (selWrap)   selWrap.hidden       = false;
     });
-    html += `</optgroup>`;
   });
 
-  html += `<optgroup label="Paquetes de Spa">`;
-  PACKAGES.forEach(pkg => { html += `<option value="${pkg}">${pkg}</option>`; });
-  html += `</optgroup>`;
+  if (changeBtn) {
+    changeBtn.addEventListener("click", () => {
+      catBtns.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-pressed", "false"); });
+      if (selWrap)  selWrap.hidden  = true;
+      if (svcField) svcField.value = "";
+    });
+  }
 
-  select.innerHTML = html;
+  // ── Time Buttons ─────────────────────────────────────────────
+  const timeBtns  = document.querySelectorAll(".rtime-btn");
+  const horaField = document.getElementById("f-hora");
 
-  // Form submit
+  timeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      timeBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (horaField) horaField.value = btn.dataset.time;
+    });
+  });
+
+  // ── Min date = today ─────────────────────────────────────────
+  const fechaInput = document.getElementById("f-fecha");
+  if (fechaInput) fechaInput.min = new Date().toISOString().split("T")[0];
+
+  // ── Form Submit → WhatsApp ───────────────────────────────────
   const form = document.getElementById("reserva-form");
   if (!form) return;
 
   form.addEventListener("submit", e => {
     e.preventDefault();
-    const servicio = form.servicio.value.trim();
-    const fecha    = form.fecha.value.trim();
-    const hora     = form.hora.value.trim();
-    const nombre   = form.nombre.value.trim();
-    const notas    = form.notas ? form.notas.value.trim() : "";
-
-    const errorEl = document.getElementById("form-error");
+    const servicio = (svcField?.value    || "").trim();
+    const fecha    = (fechaInput?.value  || "").trim();
+    const hora     = (horaField?.value   || "").trim();
+    const nombre   = (form.nombre?.value || "").trim();
+    const notas    = (form.notas?.value  || "").trim();
+    const errorEl  = document.getElementById("form-error");
 
     if (!servicio || !fecha || !nombre) {
-      if (errorEl) { errorEl.hidden = false; }
+      if (errorEl) errorEl.hidden = false;
       return;
     }
-    if (errorEl) { errorEl.hidden = true; }
+    if (errorEl) errorEl.hidden = true;
 
-    // Format fecha nicely
     const fechaDate = new Date(fecha + "T12:00:00");
-    const fechaFmt = fechaDate.toLocaleDateString("es-CO", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+    const fechaFmt  = fechaDate.toLocaleDateString("es-CO", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
     const msg = [
-      `Hola Del Cielo ✨ Quiero reservar:`,
+      "Hola Del Cielo ✨ Quiero reservar:",
       `• Servicio: ${servicio}`,
       `• Fecha: ${fechaFmt}`,
       hora ? `• Hora: ${hora}` : "",
@@ -572,19 +585,41 @@ function initReservationForm() {
       notas ? `• Notas: ${notas}` : "",
     ].filter(Boolean).join("\n");
 
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   });
 }
 
 function preselectService(svcName) {
-  const select = document.getElementById("f-servicio");
-  if (!select) return;
-  const option = Array.from(select.options).find(o => o.value === svcName);
-  if (option) {
-    select.value = svcName;
-    select.dispatchEvent(new Event("change"));
+  if (!svcName) return;
+
+  // Try to find a matching category button (exact or keyword match)
+  const catBtns = document.querySelectorAll(".rcat-btn");
+  const nameLow = svcName.toLowerCase();
+  let matched = false;
+
+  catBtns.forEach(btn => {
+    const svc = (btn.dataset.service || "").toLowerCase();
+    // Match if first word of category appears in the requested service name
+    const keyword = svc.split(/\s|&/)[0];
+    if (!matched && (svc === nameLow || nameLow.includes(keyword) || keyword.includes(nameLow.split(/\s|&/)[0]))) {
+      btn.click();
+      matched = true;
+    }
+  });
+
+  // If no match, just set the hidden input & show selected wrap
+  if (!matched) {
+    const svcField = document.getElementById("f-servicio");
+    const selWrap  = document.getElementById("rselected-wrap");
+    const selName  = document.getElementById("rselected-name");
+    if (svcField) svcField.value = svcName;
+    if (selName)  selName.textContent = svcName;
+    if (selWrap)  selWrap.hidden = false;
   }
+
+  // Smooth scroll to form
+  const reservaEl = document.getElementById("reserva");
+  if (reservaEl) reservaEl.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 /* ── Horarios & Open/Closed Status ─────────────────────────── */
